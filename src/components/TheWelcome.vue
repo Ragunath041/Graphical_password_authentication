@@ -119,6 +119,8 @@ const handleLoginPatternConfirmed = () => {
   align-items: center;
   min-height: 100vh;
   padding: 20px;
+  background-color: #f0f4f8;
+  font-family: 'Roboto', sans-serif;
 }
 
 .register-form {
@@ -129,12 +131,20 @@ const handleLoginPatternConfirmed = () => {
   width: 100%;
   max-width: 400px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.register-form:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 h2 {
   text-align: center;
   margin-bottom: 1.5rem;
   color: #2c3e50;
+  font-size: 1.8rem;
+  font-weight: 600;
 }
 
 .form-group {
@@ -153,6 +163,13 @@ input {
   border: 1px solid #ddd;
   border-radius: 4px;
   font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+input:focus {
+  border-color: #42b983;
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(66, 185, 131, 0.2);
 }
 
 .submit-btn {
@@ -165,6 +182,7 @@ input {
   font-size: 1rem;
   cursor: pointer;
   margin-top: 1rem;
+  transition: background-color 0.3s ease;
 }
 
 .submit-btn:hover {

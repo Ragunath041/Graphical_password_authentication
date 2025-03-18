@@ -10,10 +10,10 @@ const showHeader = computed(() => route.path !== '/main')
 </script>
 
 <template>
-  <header v-if="showHeader">
+  <!-- <header v-if="showHeader">
     <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
     <HelloWorld msg="Graphical User Authentication" />
-  </header>
+  </header> -->
   <router-view></router-view>
 </template>
 
