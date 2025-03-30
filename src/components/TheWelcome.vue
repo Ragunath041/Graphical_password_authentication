@@ -20,6 +20,9 @@ const handleSubmit = () => {
 
 const handlePatternConfirmed = () => {
   showImageSelection.value = false
+  // Clear registration form and show login
+  username.value = ''
+  email.value = ''
   showLogin.value = true
 }
 
@@ -38,8 +41,12 @@ const handleLoginSubmit = async () => {
 
       if (response.ok) {
         const data = await response.json()
-        storedImage.value = data.selected_image
-        showImageSelection.value = true
+        if (data.selected_image) {
+          storedImage.value = data.selected_image
+          showImageSelection.value = true
+        } else {
+          alert('Error: No stored image found')
+        }
       } else {
         alert('User not found')
       }

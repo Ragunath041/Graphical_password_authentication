@@ -31,7 +31,8 @@ const images = [
 onMounted(() => {
   if (props.isLogin && props.storedImage) {
     randomImage.value = props.storedImage
-  } else {
+  } else if (!props.isLogin) {
+    // Only set random image during registration
     const randomIndex = Math.floor(Math.random() * images.length)
     randomImage.value = images[randomIndex]
   }
@@ -115,6 +116,7 @@ const handleSubmit = async () => {
       })
 
       if (response.ok) {
+        alert('Registration successful! Please login.')
         emit('pattern-confirmed')
       } else {
         const data = await response.json()
